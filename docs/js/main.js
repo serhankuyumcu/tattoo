@@ -64,26 +64,7 @@
             });
         });
 
-        // Mobile language buttons
-        document.querySelectorAll('.mobile-lang-selector button').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const lang = btn.getAttribute('data-lang');
-                updateLanguage(lang);
-            });
-        });
 
-        // Mobile language buttons - Safe event binding
-        const mobileLangBtns = document.querySelectorAll('.mobile-lang-selector button');
-        if (mobileLangBtns.length > 0) {
-            mobileLangBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const lang = btn.getAttribute('data-lang');
-                    updateLanguage(lang);
-                    
-                    // Close mobile menu on data change? No, let user decide.
-                });
-            });
-        }
         
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
@@ -108,9 +89,14 @@
         // Mobile menu
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
         
         mobileMenuBtn?.addEventListener('click', () => {
-            mobileMenu.classList.toggle('show');
+            mobileMenu.classList.add('show');
+        });
+
+        mobileMenuClose?.addEventListener('click', () => {
+            mobileMenu.classList.remove('show');
         });
         
         mobileMenu?.querySelectorAll('a').forEach(link => {

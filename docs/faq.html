@@ -115,13 +115,15 @@
                 Tattoo<span>ızmır</span>
             </a>
 
-            <div class="nav-links">
-                <a href="index.html" data-i18n="nav.home">Ana Sayfa</a>
-                <a href="index.html#portfolio" data-i18n="nav.portfolio">Portfolyo</a>
-                <a href="index.html#about" data-i18n="nav.artists">Sanatçılar</a>
-                <a href="faq.html" data-i18n="nav.faq">SSS</a>
-                <a href="blog.html" data-i18n="nav.blog">Blog</a>
-                <a href="index.html#contact" data-i18n="nav.contact">İletişim</a>
+            <div class="header-right">
+                <div class="nav-links">
+                    <a href="index.html" data-i18n="nav.home">Ana Sayfa</a>
+                    <a href="index.html#portfolio" data-i18n="nav.portfolio">Portfolyo</a>
+                    <a href="index.html#about" data-i18n="nav.artists">Sanatçılar</a>
+                    <a href="faq.html" class="active" data-i18n="nav.faq">SSS</a>
+                    <a href="blog.html" data-i18n="nav.blog">Blog</a>
+                    <a href="#contact" data-i18n="nav.contact">İletişim</a>
+                </div>
 
                 <div class="language-selector">
                     <button class="lang-btn" id="langBtn">
@@ -136,27 +138,23 @@
                         <button data-lang="ru">🇷🇺 Русский</button>
                     </div>
                 </div>
-            </div>
 
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+                <button title="button" class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
 
         <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-lang-selector">
-                <button data-lang="tr">🇹🇷 TR</button>
-                <button data-lang="en">🇬🇧 EN</button>
-                <button data-lang="ru">🇷🇺 RU</button>
-            </div>
+            <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
             <a href="index.html" data-i18n="nav.home">Ana Sayfa</a>
             <a href="index.html#portfolio" data-i18n="nav.portfolio">Portfolyo</a>
             <a href="index.html#about" data-i18n="nav.artists">Sanatçılar</a>
-            <a href="faq.html" data-i18n="nav.faq">SSS</a>
+            <a href="faq.html" class="active" data-i18n="nav.faq">SSS</a>
             <a href="blog.html" data-i18n="nav.blog">Blog</a>
-            <a href="index.html#contact" data-i18n="nav.contact">İletişim</a>
+            <a href="#contact" data-i18n="nav.contact">İletişim</a>
         </div>
     </nav>
 
@@ -280,7 +278,7 @@
 
                     div.querySelector('.faq-question').addEventListener('click', () => {
                         const isOpen = div.classList.contains('active');
-                        
+
                         // Close all others
                         document.querySelectorAll('.faq-item').forEach(item => {
                             item.classList.remove('active');
