@@ -291,13 +291,13 @@
             <div class="footer-grid">
                 <!-- Contact Info -->
                 <div class="footer-section">
-                    <h4 class="footer-heading">Contact</h4>
+                    <h4 class="footer-heading" data-i18n="footer.contact">Contact</h4>
                     <div class="footer-info">
                         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                             <circle cx="12" cy="10" r="3"></circle>
                         </svg>
-                        <p>Alsancak, Izmir, Turkey</p>
+                        <p data-i18n="footer.address">Alsancak, Izmir, Turkey</p>
                     </div>
                     <div class="footer-info">
                         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
@@ -319,15 +319,15 @@
 
                 <!-- Opening Hours -->
                 <div class="footer-section footer-center">
-                    <h4 class="footer-heading">Opening Hours</h4>
+                    <h4 class="footer-heading" data-i18n="footer.hours">Opening Hours</h4>
                     <ul class="footer-hours">
-                        <li>Mon - Sun: 10:00 - 20:00</li>
+                        <li data-i18n="footer.weekdays">Mon - Sun: 10:00 - 20:00</li>
                     </ul>
                 </div>
 
                 <!-- Social -->
                 <div class="footer-section footer-right">
-                    <h4 class="footer-heading">Social</h4>
+                    <h4 class="footer-heading" data-i18n="footer.follow">Social</h4>
                     <div class="footer-social">
                         <a href="https://instagram.com" target="_blank" rel="noopener">
                             <svg width="24" height="24" fill="currentColor">
@@ -336,12 +336,12 @@
                             </svg>
                         </a>
                     </div>
-                    <p class="footer-text">Follow us for latest works</p>
+                    <p class="footer-text" data-i18n="footer.brandSubtitle">Follow us for latest works</p>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>© 2026 Tattooİzmir. All rights reserved.</p>
+                <p data-i18n="footer.copyright">© 2026 Tattooİzmir. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -372,8 +372,26 @@
             const modalMeta = document.getElementById('modalMeta');
             const modalContent = document.getElementById('modalContent');
 
-            if (blogGrid && window.blogPosts) {
-                window.blogPosts.forEach(post => {
+            function renderBlog(lang) {
+                if (!blogGrid || !window.blogPosts) return;
+
+                // Clear existing content
+                blogGrid.innerHTML = '';
+
+                let posts = [];
+                if (Array.isArray(window.blogPosts)) {
+                    posts = window.blogPosts;
+                } else {
+                    posts = window.blogPosts[lang] || window.blogPosts.tr;
+                }
+
+                const readMoreText = {
+                    tr: "Devamını Oku →",
+                    en: "Read More →",
+                    ru: "Читать далее →"
+                }[lang] || "Read More →";
+
+                posts.forEach(post => {
                     const card = document.createElement('div');
                     card.className = 'blog-card';
                     card.innerHTML = `
@@ -383,7 +401,7 @@
                             <p class="blog-card-excerpt">${post.excerpt}</p>
                         </div>
                         <div class="blog-card-footer">
-                            <a href="#" class="read-more">Devamını Oku →</a>
+                            <a href="#" class="read-more">${readMoreText}</a>
                         </div>
                     `;
 
@@ -399,6 +417,15 @@
                     blogGrid.appendChild(card);
                 });
             }
+
+            // Initial render
+            const currentLang = localStorage.getItem('language') || 'tr';
+            renderBlog(currentLang);
+
+            // Listen for language changes
+            window.addEventListener('languageChanged', (e) => {
+                renderBlog(e.detail.lang);
+            });
 
             modalClose?.addEventListener('click', () => {
                 modal.classList.remove('show');

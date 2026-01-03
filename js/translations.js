@@ -51,15 +51,23 @@ const translations = {
         },
         footer: {
             contact: "İletişim",
-            address: "Adres",
+            address: "Alsancak, İzmir, Türkiye",
             phone: "Telefon",
             hours: "Çalışma Saatleri",
-            weekdays: "Pzt-Cmt:",
+            weekdays: "Pzt - Paz: 10:00 - 20:00",
             sunday: "Pazar:",
             closed: "Kapalı",
             follow: "Bizi Takip Edin",
-            brandSubtitle: "İzmir'in Sanat Merkezi",
+            brandSubtitle: "En yeni çalışmalarımız için bizi takip edin",
             copyright: "© 2026 Tattoo İzmir. Tüm hakları saklıdır."
+        },
+        blog: {
+            title: "Blog",
+            subtitle: "Dövme Dünyasından Haberler"
+        },
+        faq: {
+            title: "Sıkça Sorulan Sorular",
+            subtitle: "Merak Ettikleriniz"
         }
     },
     en: {
@@ -113,15 +121,23 @@ const translations = {
         },
         footer: {
             contact: "Contact",
-            address: "Address",
+            address: "Alsancak, Izmir, Turkey",
             phone: "Phone",
             hours: "Business Hours",
-            weekdays: "Mon-Sat:",
+            weekdays: "Mon - Sun: 10:00 - 20:00",
             sunday: "Sunday:",
             closed: "Closed",
             follow: "Follow Us",
-            brandSubtitle: "Izmir's Art Center",
+            brandSubtitle: "Follow us for latest works",
             copyright: "© 2026 Tattoo Izmir. All rights reserved."
+        },
+        blog: {
+            title: "Blog",
+            subtitle: "News from Tattoo World"
+        },
+        faq: {
+            title: "Frequently Asked Questions",
+            subtitle: "What You Need to Know"
         }
     },
     ru: {
@@ -175,15 +191,23 @@ const translations = {
         },
         footer: {
             contact: "Контакты",
-            address: "Адрес",
+            address: "Алсанджак, Измир, Турция",
             phone: "Телефон",
             hours: "Часы работы",
-            weekdays: "Пн-Сб:",
+            weekdays: "Пн - Вс: 10:00 - 20:00",
             sunday: "Воскресенье:",
             closed: "Закрыто",
             follow: "Следите за нами",
-            brandSubtitle: "Центр искусства Измира",
+            brandSubtitle: "Следите за нашими новыми работами",
             copyright: "© 2026 Tattoo Izmir. Все права защищены."
+        },
+        blog: {
+            title: "Блог",
+            subtitle: "Новости из мира тату"
+        },
+        faq: {
+            title: "Часто Задаваемые Вопросы",
+            subtitle: "Что вам нужно знать"
         }
     }
 };

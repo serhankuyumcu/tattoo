@@ -35,6 +35,9 @@
                 btn.classList.remove('active');
             }
         });
+
+        // Dispatch language changed event
+        window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: lang } }));
     }
     
     // Initialize language
