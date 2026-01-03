@@ -193,6 +193,30 @@ body {
     transition: color 0.3s ease;
 }
 
+.mobile-lang-selector {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    order: -1; /* Show at top */
+}
+
+.mobile-lang-selector button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mobile-lang-selector button:hover,
+.mobile-lang-selector button.active {
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
 /* Hero */
 .hero {
     position: relative;

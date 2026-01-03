@@ -132,7 +132,7 @@ const galleryData = [
         images: [
             "images/pet-portrait/1.webp",
             "images/pet-portrait/2.webp",
-            "images/pet-portrait/3.webp",
+            "images/pet-portrait/3.png",
             "images/pet-portrait/4.webp",
             "images/pet-portrait/5.webp"
         ]

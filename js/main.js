@@ -23,7 +23,17 @@
         });
         
         // Update language button
-        document.getElementById('currentLang').textContent = lang.toUpperCase();
+        const currentLangEl = document.getElementById('currentLang');
+        if (currentLangEl) currentLangEl.textContent = lang.toUpperCase();
+
+        // Update mobile buttons active state
+        document.querySelectorAll('.mobile-lang-selector button').forEach(btn => {
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
     }
     
     // Initialize language
@@ -44,6 +54,14 @@
         });
         
         langDropdown?.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang');
+                updateLanguage(lang);
+            });
+        });
+
+        // Mobile language buttons
+        document.querySelectorAll('.mobile-lang-selector button').forEach(btn => {
             btn.addEventListener('click', () => {
                 const lang = btn.getAttribute('data-lang');
                 updateLanguage(lang);
