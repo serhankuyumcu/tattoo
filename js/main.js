@@ -67,6 +67,19 @@
                 updateLanguage(lang);
             });
         });
+
+        // Mobile language buttons - Safe event binding
+        const mobileLangBtns = document.querySelectorAll('.mobile-lang-selector button');
+        if (mobileLangBtns.length > 0) {
+            mobileLangBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.getAttribute('data-lang');
+                    updateLanguage(lang);
+                    
+                    // Close mobile menu on data change? No, let user decide.
+                });
+            });
+        }
         
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
