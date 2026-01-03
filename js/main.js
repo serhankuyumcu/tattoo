@@ -1,5 +1,6 @@
 // Main JavaScript
 (function() {
+    console.log("Main.js loaded");
     // Language handling
     let currentLang = localStorage.getItem('language') || 'tr';
     

@@ -261,7 +261,7 @@ body {
     letter-spacing: 0.2em;
     color: var(--color-gray-300);
     margin-bottom: 1rem;
-    opacity: 0;
+    /* opacity: 0; */
     animation: fadeInUp 1s ease forwards;
 }
 
@@ -270,7 +270,7 @@ body {
     font-size: 4rem;
     line-height: 1.1;
     margin-bottom: 2rem;
-    opacity: 0;
+    /* opacity: 0; */
     animation: fadeInUp 1s ease 0.2s forwards;
 }
 
@@ -286,7 +286,7 @@ body {
     font-size: 0.875rem;
     border-radius: 0.25rem;
     transition: all 0.3s ease;
-    opacity: 0;
+    /* opacity: 0; */
     animation: fadeInUp 1s ease 0.4s forwards;
 }
 
