@@ -142,22 +142,26 @@
                     
                     <!-- Default Overlay (Hides on Hover) -->
                     <div class="gallery-overlay-default">
-                        <div class="gallery-item-title-static">${item.title}</div>
-                        <div class="gallery-item-category-static">${item.category}</div>
+                        <div class="gallery-item-title-static" data-i18n="gallery.categories.${item.id}">${item.title}</div>
+                        <div class="gallery-item-category-static" data-i18n="gallery.types.${item.categoryId}">${item.category}</div>
                     </div>
 
                     <!-- Hover Overlay (Shows on Hover) -->
                     <div class="gallery-overlay-hover">
-                        <h3 class="gallery-hover-title">${item.title}</h3>
-                        <span class="gallery-hover-category">${item.category}</span>
-                        <button class="view-btn">View Gallery</button>
+                        <h3 class="gallery-hover-title" data-i18n="gallery.categories.${item.id}">${item.title}</h3>
+                        <span class="gallery-hover-category" data-i18n="gallery.types.${item.categoryId}">${item.category}</span>
+                        <button class="view-btn" data-i18n="gallery.viewGallery">View Gallery</button>
                     </div>
                 `;
                 
                 div.addEventListener('click', () => {
                     currentImages = item.images;
                     currentImageIndex = 0;
-                    modalTitle.textContent = item.title;
+                    // For modal title, we need to get the translated text
+                    const currentLang = localStorage.getItem('language') || 'tr';
+                    const translatedTitle = window.siteTranslations?.[currentLang]?.gallery?.categories?.[item.id] || item.title;
+                    modalTitle.textContent = translatedTitle;
+                    
                     updateModal();
                     modal.classList.add('show');
                     document.body.style.overflow = 'hidden';
@@ -165,6 +169,9 @@
                 
                 galleryGrid.appendChild(div);
             });
+            
+            // Update language for newly added gallery items
+            updateLanguage(currentLang);
 
             // Modal Controls
             modalClose?.addEventListener('click', () => {

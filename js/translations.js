@@ -30,8 +30,24 @@ const translations = {
                 celestial: "Göksel Dotwork",
                 minimalist: "Minimalist Yazı",
                 abstract: "Soyut Akış",
-                singleNeedle: "Tek İğne Çalışması"
-            }
+                singleNeedle: "Tek İğne Çalışması",
+                ornamental: "Ornamental Kol",
+                pet: "Evcil Hayvan Portresi",
+                anime: "Anime Çizgisel"
+            },
+            types: {
+                nature: "Doğa",
+                portrait: "Portre",
+                abstract: "Soyut",
+                cosmic: "Kozmik",
+                typography: "Tipografi",
+                modern: "Modern",
+                object: "Obje",
+                traditional: "Geleneksel",
+                memorial: "Anısal",
+                popCulture: "Pop Kültür"
+            },
+            viewGallery: "Galeriyi Gör"
         },
         footer: {
             contact: "İletişim",
@@ -76,8 +92,24 @@ const translations = {
                 celestial: "Celestial Dotwork",
                 minimalist: "Minimalist Script",
                 abstract: "Abstract Flow",
-                singleNeedle: "Single Needle Study"
-            }
+                singleNeedle: "Single Needle Study",
+                ornamental: "Ornamental Sleeve",
+                pet: "Pet Portrait",
+                anime: "Anime Line"
+            },
+            types: {
+                nature: "Nature",
+                portrait: "Portrait",
+                abstract: "Abstract",
+                cosmic: "Cosmic",
+                typography: "Typography",
+                modern: "Modern",
+                object: "Object",
+                traditional: "Traditional",
+                memorial: "Memorial",
+                popCulture: "Pop Culture"
+            },
+            viewGallery: "View Gallery"
         },
         footer: {
             contact: "Contact",
@@ -122,8 +154,24 @@ const translations = {
                 celestial: "Небесный дотворк",
                 minimalist: "Минималистский шрифт",
                 abstract: "Абстрактный поток",
-                singleNeedle: "Одноигольная работа"
-            }
+                singleNeedle: "Одноигольная работа",
+                ornamental: "Орнаментальный рукав",
+                pet: "Портрет питомца",
+                anime: "Аниме лайн"
+            },
+            types: {
+                nature: "Природа",
+                portrait: "Портрет",
+                abstract: "Абстракция",
+                cosmic: "Космос",
+                typography: "Типография",
+                modern: "Модерн",
+                object: "Предмет",
+                traditional: "Традиционный",
+                memorial: "Памятный",
+                popCulture: "Поп-культура"
+            },
+            viewGallery: "Смотреть галерею"
         },
         footer: {
             contact: "Контакты",

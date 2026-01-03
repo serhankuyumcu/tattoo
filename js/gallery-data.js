@@ -1,6 +1,8 @@
 // Gallery data
 const galleryData = [
     {
+        id: "floral",
+        categoryId: "nature",
         title: "Floral Botanik",
         category: "Nature",
         coverImage: "images/floral/1.webp",
@@ -18,6 +20,8 @@ const galleryData = [
         ]
     },
     {
+        id: "microRealism",
+        categoryId: "portrait",
         title: "Mikro Realizm",
         category: "Portrait",
         coverImage: "images/micro-realism/1.webp",
@@ -32,6 +36,8 @@ const galleryData = [
         ]
     },
     {
+        id: "geometric",
+        categoryId: "abstract",
         title: "Geometrik Harmoni",
         category: "Abstract",
         coverImage: "images/geometric-harmony/1.webp",
@@ -46,6 +52,8 @@ const galleryData = [
         ]
     },
     {
+        id: "celestial",
+        categoryId: "cosmic",
         title: "Göksel Dotwork",
         category: "Cosmic",
         coverImage: "images/celestial-dotwork/1.webp",
@@ -58,6 +66,8 @@ const galleryData = [
         ]
     },
     {
+        id: "minimalist",
+        categoryId: "typography",
         title: "Minimalist Yazı",
         category: "Typography",
         coverImage: "images/minimalist-script/1.webp",
@@ -70,6 +80,8 @@ const galleryData = [
         ]
     },
     {
+        id: "abstract",
+        categoryId: "modern",
         title: "Soyut Akış",
         category: "Modern",
         coverImage: "images/abstract-flow/1.webp",
@@ -82,6 +94,8 @@ const galleryData = [
         ]
     },
     {
+        id: "singleNeedle",
+        categoryId: "object",
         title: "Tek İğne Çalışması",
         category: "Object",
         coverImage: "images/single-needle-study/1.webp",
@@ -96,6 +110,8 @@ const galleryData = [
         ]
     },
     {
+        id: "ornamental",
+        categoryId: "traditional",
         title: "Ornamental Kol",
         category: "Traditional",
         coverImage: "images/ornamental/1.webp",
@@ -108,6 +124,8 @@ const galleryData = [
         ]
     },
     {
+        id: "pet",
+        categoryId: "memorial",
         title: "Evcil Hayvan Portresi",
         category: "Memorial",
         coverImage: "images/pet-portrait/1.webp",
@@ -120,6 +138,8 @@ const galleryData = [
         ]
     },
     {
+        id: "anime",
+        categoryId: "popCulture",
         title: "Anime Çizgisel",
         category: "Pop Culture",
         coverImage: "images/anime/1.webp",
