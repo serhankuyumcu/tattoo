@@ -9,7 +9,6 @@ const galleryData = [
         images: [
             "images/floral/1.webp",
             "images/floral/2.webp",
-            "images/floral/3.webp",
             "images/floral/4.webp",
             "images/floral/5.webp",
             "images/floral/6.webp",
