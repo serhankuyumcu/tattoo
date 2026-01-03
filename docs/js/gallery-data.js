@@ -9,13 +9,13 @@ const galleryData = [
         images: [
             "images/floral/1.webp",
             "images/floral/2.webp",
+            "images/floral/3.webp",
             "images/floral/4.webp",
             "images/floral/5.webp",
             "images/floral/6.webp",
             "images/floral/7.webp",
             "images/floral/8.webp",
-            "images/floral/9.webp",
-            "images/floral/10.webp"
+            "images/floral/9.webp"
         ]
     },
     {
