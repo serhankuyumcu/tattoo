@@ -2,7 +2,13 @@
 (function() {
     console.log("Main.js loaded");
     // Language handling
-    let currentLang = localStorage.getItem('language') || 'tr';
+    // Check URL parameters first, then localStorage, then default to 'tr'
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    
+    // Validate language code
+    const validLangs = ['tr', 'en', 'ru'];
+    let currentLang = (validLangs.includes(urlLang)) ? urlLang : (localStorage.getItem('language') || 'tr');
     
     function updateLanguage(lang) {
         currentLang = lang;
@@ -35,6 +41,36 @@
                 btn.classList.remove('active');
             }
         });
+
+        // SEO: Update HTML lang attribute
+        document.documentElement.lang = lang;
+
+        // SEO: Update Title and Description
+        const translation = window.siteTranslations[lang];
+        if (translation) {
+            // Update Title (if specific key exists or generic logic)
+            // Assuming home page for now, or check page type
+            if (window.location.pathname.includes('faq')) {
+                document.title = translation.faq.title + " | Tattoo İzmir";
+                document.querySelector('meta[name="description"]')?.setAttribute('content', translation.faq.subtitle); 
+            } else if (window.location.pathname.includes('blog')) {
+                document.title = translation.blog.title + " | Tattoo İzmir";
+                 document.querySelector('meta[name="description"]')?.setAttribute('content', translation.blog.subtitle);
+            } else {
+                // Home
+                document.title = "Tattoo İzmir | " + translation.hero.subtitle;
+                // Description update requires a specific key in translations, using hero subtitle as fallback for now
+                // Ideally add 'meta.description' to translations.js
+            }
+        }
+
+        // SEO: Update Canonical URL
+        const canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) {
+            const baseUrl = window.location.protocol + '//' + window.location.host + window.location.pathname;
+            const param = lang === 'tr' ? '' : `?lang=${lang}`;
+            canonical.href = baseUrl + param;
+        }
 
         // Dispatch language changed event
         window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: lang } }));
